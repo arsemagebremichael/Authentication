@@ -1,0 +1,114 @@
+:root {
+    --tujijenge-light-green: #C2CA83;
+    --tujijenge-green: #084236;
+    --tujijenge-white: #FFFFFF;
+}
+
+.share-button {
+    font-family: 'Nunito', sans-serif;
+    padding: 15px 64px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary {
+    background-color: var(--tujijenge-green);
+    color: var(--tujijenge-white);
+    min-width: 12vw;
+    font-size: 23px;
+
+}
+
+.primary:hover {
+    background-color: var(--tujijenge-light-green);
+    color: var(--tujijenge-green);
+}
+
+.secondary {
+    border: 1px solid var(--tujijenge-green);
+    background-color: transparent;
+    color: var(--tujijenge-green);
+    font-size: 23px;
+
+}
+
+.secondary:hover {
+    background-color: var(--tujijenge-green);
+    color: var(--tujijenge-white);
+}
+
+.tertiary {
+    background-color: var(--tujijenge-light-green);
+    color: var(--tujijenge-green);
+    padding: 8px 16px;
+}
+
+.tertiary:hover {
+    background-color: var(--tujijenge-green);
+    color: var(--tujijenge-white);
+}
+
+.quaternary {
+    background-color: var(--tujijenge-white);
+    color: var(--tujijenge-green);
+    border: 1px solid var(--tujijenge-light-green);
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.quaternary:hover {
+    background-color: var(--tujijenge-green);
+    color: var(--tujijenge-white);
+}
+
+.additional {
+    background-color: var(--tujijenge-light-green);
+    color: var(--tujijenge-green);
+    font-size: 1.5rem;
+    padding: 12px 45px;
+}
+
+.additional:hover {
+    background-color: var(--tujijenge-green);
+    color: var(--tujijenge-white);
+}
+
+.secondary-additional {
+    background-color: var(--tujijenge-light-white);
+    border: 1px solid var(--tujijenge-light-green);
+    color: var(--tujijenge-green);
+    padding: 12px 40px;
+    font-size: 1.4rem;
+}
+
+.secondary-additional:hover {
+    background-color: var(--tujijenge-green);
+    color: var(--tujijenge-white);
+}
+
+@media (max-width: 1400px){
+    .share-button{
+        padding: 15px 64px;
+        font-size: 17px;
+
+    }
+   
+    .tertiary{
+
+        padding: 7px 15px;
+        font-size: 13px;
+    }
+    .quaternary{
+        padding: 7px 15px;
+        font-size: 13px;    }
+
+    
+}

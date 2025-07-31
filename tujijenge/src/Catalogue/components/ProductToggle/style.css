@@ -1,0 +1,140 @@
+.product-toggle {
+    display: flex;
+    align-items: center;
+    gap:60%;
+    margin-left: 90px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+  
+  .toggle-btn {
+    border: none;
+    background: none;
+    color: #084236;
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 8px 32px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .toggle-btn.active,
+  .toggle-btn:hover {
+    background: #C2CA83;
+    color: #084236;
+    box-shadow: 0 2px 8px rgba(8,66,54,0.08);
+  }
+  .toggle-btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+
+  @media (min-width: 820px) and (max-width: 907px){
+    .product-toggle {
+      gap:30%;
+      margin-left: 80px;
+    }
+    
+    .toggle-btn {
+      font-size: 1.2rem;
+      font-weight: 300;
+      padding: 6px 15px;
+    }
+    
+  }
+
+
+  @media (min-width: 908px) and (max-width: 1112px){
+    .product-toggle {
+      gap:45%;
+      margin-left: 80px;
+    }
+    
+    .toggle-btn {
+      font-size: 1.5rem;
+      font-weight: 300;
+      padding: 6px 15px;
+    }
+    
+  }
+
+
+  @media (min-width: 1112px) and (max-width: 1316px){
+    .product-toggle {
+      gap:55%;
+      margin-left: 80px;
+    }
+    
+    .toggle-btn {
+      font-size: 1.5rem;
+      font-weight: 300;
+      padding: 8px 25px;
+    }
+    
+  }
+  @media (min-width: 1316px) and (max-width: 1520px){
+    .product-toggle {
+      gap:62%;
+      margin-left: 80px;
+    }
+    
+    .toggle-btn {
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding: 8px 25px;
+    }
+    
+  }
+
+  @media (min-width: 1520px) and (max-width: 1724px){
+    .product-toggle {
+      gap:68%;
+      margin-left: 80px;
+    }
+    
+    .toggle-btn {
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding: 8px 25px;
+    }
+    
+  }
+
+
+  @media (min-width: 1724px) and (max-width: 1927px){
+    .product-toggle {
+      gap:70%;
+      margin-left: 90px;
+    }
+    
+    .toggle-btn {
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding: 8px 25px;
+    }
+    
+  }
+
+
+  @media (min-width:1928px){
+  .product-toggle {
+    display: flex;
+    align-items: center;
+    gap:70%;
+    justify-content: space-around;
+    margin-left: 60px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+  
+    .toggle-btn {
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding: 8px 25px;
+    }
+    
+  }

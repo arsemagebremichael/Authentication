@@ -1,0 +1,230 @@
+.recent-orders-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* Remove 3% margin */
+  padding: 0 3%; /* Add padding instead */
+}
+
+.order-history {
+  flex: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem; /* Add bottom padding */
+}
+.page-title {
+  color: var(--primary-color);
+  margin: 1.5rem 0;
+  font-size: clamp(1.8rem, 5vw, 2.5rem); 
+  font-weight: 800;
+  padding-left: 0.625rem;
+  text-align: left;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 1rem;
+  padding: 0 0.625rem;
+  gap: 1rem;
+}
+
+.order-count {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: var(--secondary-color);
+  font-weight: 600;
+  background-color: var(--bg-row-even);
+  padding: 0.75rem;
+  border-radius: 1rem;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.order-table {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1.5fr 1.3fr 1.3fr 1.3fr 1.3fr 1.3fr ;
+  font-weight: bold;
+  padding: 1rem 0.625rem;
+  background-color: var(--bg-row-even);
+  color: var(--secondary-color);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  border-bottom: 2px solid var(--border-light);
+  gap: 0.625rem;
+}
+
+.table-header > div {
+  padding: 0 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 700;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  margin-bottom: 2%;
+}
+
+.pagination-btn {
+  background-color: #DEE5A5;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+  max-width: 10rem; /* Limit button width */
+  touch-action: manipulation; /* Improve touch responsiveness */
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: var(--button-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.page-number {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+/* Tablet (max-width: 1200px) */
+@media screen and (max-width: 1200px) {
+  .table-header {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr; /* 6 columns */
+    grid-template-areas:
+      "community community date date items items"
+      "location total total customers status status";
+    gap: 0.625rem;
+    padding: 0.9375rem;
+  }
+
+  .table-header > div:nth-child(1) { grid-area: community; }
+  .table-header > div:nth-child(2) { grid-area: date; }
+  .table-header > div:nth-child(3) { grid-area: location; }
+  .table-header > div:nth-child(4) { grid-area: total; }
+  .table-header > div:nth-child(5) { grid-area: items; }
+  .table-header > div:nth-child(6) { grid-area: customers; }
+  .table-header > div:nth-child(7) { grid-area: status; }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .order-history {
+    margin: 0 3%;
+  }
+
+  .page-title {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .search-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9375rem;
+    margin: 1rem 0;
+  }
+
+  .order-count {
+    width: 100%;
+    padding: 0.625rem;
+  }
+
+  .table-header {
+    display: none; /* Hide header on mobile */
+  }
+
+  .order-table[data-view="table"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  /* Card layout for OrderRow (assumed to be styled in OrderRow's CSS) */
+  .order-table[data-view="table"] > .even-row,
+  .order-table[data-view="table"] > .odd-row {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    background-color: var(--bg-row-even);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  .pagination-btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem;
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+
+  .page-number {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+}
+
+/* Extra small screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .recent-orders-wrapper {
+    padding: 0 0.5rem;
+  }
+
+  .order-history {
+    margin: 0 2%;
+  }
+
+  .page-title {
+    font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+  }
+
+  .search-section {
+    padding: 0;
+  }
+
+  .pagination-btn {
+    padding: 0.5rem;
+    font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+  }
+}

@@ -1,0 +1,140 @@
+
+@import '@fontsource/nunito';
+
+
+:root {
+  --primary-color: #084236; 
+  --secondary-color: #5a7167; 
+  --bg-light: #f8faf7; 
+  --bg-row-odd: #DADFB1; 
+  --bg-row-even: #EDF5E1; 
+  --bg-hover: #E6F2DA; 
+  --border-light: #d0e9d1; 
+  --button-bg: #C2CA83; 
+  --button-hover: #214223;
+}
+
+.view-btn, .mark-btn {
+  background-color: var(--button-bg);
+  color: var(--primary-color);
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  font-weight: 600;
+  min-width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.view-btn:hover, .mark-btn:hover {
+  background-color: var(--button-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mark-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Delivery status styling */
+.delivery-status {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 150px;
+  justify-content: center;
+  background-color: var(--border-light);
+  color: #2e7d32;
+  height: 40px;
+}
+
+.status-icon {
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.products-details {
+  background-color: #F8FDF5;
+  padding: 20px;
+  margin: 15px 0 5px 0;
+  border-radius: 6px;
+  border-left: 3px solid #A5D6A7;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.products-details p {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.products-details ul {
+  padding-left: 20px;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.products-details li {
+  line-height: 1.6;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(8, 66, 54, 0.1);
+}
+
+.back-arrow {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: transform 0.2s;
+}
+
+.back-arrow:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}

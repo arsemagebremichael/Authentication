@@ -1,0 +1,187 @@
+.order-row-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  height: auto;
+}
+
+.order-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1.3fr 1.3fr 1.3fr 1.3fr 1.3fr;
+  align-items: center;
+  padding: 1.5rem;
+  width: 100%;
+  font-size: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 70px;
+  box-sizing: border-box;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.cell {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: visible;
+  text-overflow: ellipsis;
+  min-height: 40px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.items-cell {
+  position: relative;
+  white-space: normal;
+}
+
+.view-customers-col,
+.status-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 50%;
+  border-radius: 10px;
+}
+
+.items-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  width: 40%; 
+}
+
+.item-count {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.expand-icon {
+  font-size: 0.9em;
+  margin-left: 8px;
+  color: var(--secondary-color);
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-details-row {
+  background-color: #f8fdf5;
+  padding: 15px 20px; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.products-details {
+  padding: 0; 
+}
+
+.products-details p {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-item {
+  padding: 12px 20px; 
+  font-size: 15px;
+  color: #333;
+}
+
+.order-item:hover {
+  background: #e8f5e9; 
+}
+
+.order-item.no-orders {
+  color: #999;
+  font-style: italic;
+}
+
+@media (max-width: 1200px) {
+  .order-row {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "community community date date items items"
+      "location total total customers status status";
+    gap: 10px;
+    padding: 15px;
+  }
+  .cell:nth-child(1) {
+    grid-area: community;
+  }
+  .cell:nth-child(2) {
+    grid-area: date;
+  }
+  .cell:nth-child(3) {
+    grid-area: location;
+  }
+  .cell:nth-child(4) {
+    grid-area: total;
+  }
+  .cell:nth-child(5) {
+    grid-area: items;
+  }
+  .cell:nth-child(6) {
+    grid-area: customers;
+  }
+  .cell:nth-child(7) {
+    grid-area: status;
+  }
+  .product-details-row {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "community"
+      "date"
+      "location"
+      "total"
+      "items"
+      "customers"
+      "status";
+    padding: 15px 10px;
+    gap: 12px;
+  }
+
+  .cell {
+    padding: 10px 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .cell:before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--secondary-color);
+    width: 45%;
+    display: inline-block;
+  }
+
+  .items-summary {
+    width: 100%; 
+  }
+
+  .product-details-row {
+    padding: 10px;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+  }
+
+  .products-details ul {
+    padding-left: 20px; 
+  }
+}

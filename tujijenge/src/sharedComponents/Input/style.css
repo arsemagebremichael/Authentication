@@ -1,0 +1,167 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .form-group {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    box-sizing: border-box;
+    gap: 10px;
+    margin-left: 5vw;
+  }
+  
+  .form-label {
+    font-size: 25px;
+    color: #084236;
+    flex-shrink: 0;
+    width: 120px;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  .input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    max-width: 250px;
+
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Increased right padding for eye icon */
+    font-size: 20px;
+    border: 1.5px solid #084236;
+    border-radius: 5px;
+    color: #084236;
+    box-sizing: border-box;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px; /* Adjusted position */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #084236;
+    font-size: 1.2rem;
+    border: none;
+    background: none;
+    z-index: 10; /* Ensure it's above the input */
+  }
+  
+  .eye-icon:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Mobile (0–600px) */
+  @media (max-width: 600px) {
+    .form-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .form-label {
+      font-size: 18px;
+      margin-bottom: 4px;
+      width: 100%;
+      text-align: left;
+      padding-right: 0;
+    }
+    
+    .input-wrapper {
+      max-width: 230px;
+    }
+    
+    .form-input {
+      padding: 7px 30px 7px 7px;
+      font-size: 16px;
+    }
+    
+    .eye-icon {
+      font-size: 1rem;
+      right: 8px;
+    }
+  }
+  
+  /* Small tablets (601px–767px) */
+  @media (min-width: 601px) and (max-width: 767px) {
+    .form-group {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .form-label {
+      font-size: 20px;
+      width: 100px;
+    }
+    
+    .input-wrapper {
+      max-width: 200px;
+    }
+    
+    .form-input {
+      padding: 10px 32px 10px 10px;
+      font-size: 16px;
+    }
+    
+    .eye-icon {
+      font-size: 1.1rem;
+      right: 10px;
+    }
+  }
+  
+  /* iPads (768px–1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .form-group {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .form-label {
+      font-size: 20px;
+      width: 110px;
+    }
+    
+    .input-wrapper {
+      max-width: 200px;
+    }
+    
+    .form-input {
+      padding: 10px 32px 10px 10px;
+      font-size: 16px;
+    }
+    
+    .eye-icon {
+      font-size: 1.1rem;
+      right: 10px;
+    }
+  }
+  
+  /* Larger screens (1025px+) */
+  @media (min-width: 1025px) {
+    .form-group {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .form-label {
+      font-size: 25px;
+      width: 120px;
+    }
+    
+    .input-wrapper {
+      max-width: 250px;
+    }
+    
+    .eye-icon {
+      font-size: 1.2rem;
+      right: 12px;
+    }
+  }
